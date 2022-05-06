@@ -1,0 +1,1992 @@
+# baseURI: http://example.org/sign_language_data_cat
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.lexinfo.net/ontology/3.0/lexinfo
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/lemon/ontolex
+# prefix: sldc
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sldc: <http://example.org/sign_language_data_cat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/sign_language_data_cat>
+  rdf:type owl:Ontology ;
+  owl:imports dc: ;
+  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://www.lexinfo.net/ontology/3.0/lexinfo> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/ns/lemon/ontolex> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+sldc:A
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"a\"" ;
+.
+sldc:Abdomen
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"abdomen\""@en ;
+.
+sldc:AbsoluteOrientation
+  rdf:type owl:Class ;
+  dc:source "inferred from DGS Grammar 1.1.2"@en ;
+  rdfs:label "\"aboslute orientation\""@en ;
+  rdfs:subClassOf sldc:Orientation ;
+  skos:definition "\"Orientation of the articulator in terms of the side of the active articulator that faces the end location of the sign.\""@en ;
+.
+sldc:AbsoluteOrientation_Bottom
+  rdf:type sldc:AbsoluteOrientation ;
+  rdfs:label "\"bottom\""@en ;
+.
+sldc:AbsoluteOrientation_Left
+  rdf:type sldc:AbsoluteOrientation ;
+  rdfs:label "\"left\""@en ;
+.
+sldc:AbsoluteOrientation_Right
+  rdf:type sldc:AbsoluteOrientation ;
+  rdfs:label "\"right\""@en ;
+.
+sldc:AbsoluteOrientation_Top
+  rdf:type sldc:AbsoluteOrientation ;
+  rdfs:label "\"top\""@en ;
+.
+sldc:AdverbialMouthGesture
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"adverbial mouth gesture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"A mouth action that functions as an adjectival or adverbial modifier of the accompanying manual sign.\""@en ;
+.
+sldc:Alternating
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"alternating \""@en ;
+  rdfs:subClassOf sldc:AlternatingMovement ;
+  skos:definition "\"Asynchronous simultaneous movement of the two active articulators\""@en ;
+.
+sldc:AlternatingMovement
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"alternating movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+  skos:definition "\"Bimanual movement in which the two hands move out-of-sync.\""@en ;
+.
+sldc:Arm
+  rdf:type sldc:MajorLocation ;
+  dc:source "https://asl-lex.org" ;
+  rdfs:label "\"arm\""@en ;
+.
+sldc:ArmAway
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"arm away\""@en ;
+.
+sldc:ArticulatorInternalMovement
+  rdf:type owl:Class ;
+  rdfs:comment """Also called \"secondary movements\", which \"consist of changes in orientation and/or hand configuration, as well 
+as finger movements like finger wiggling\" (Blueprint, section 1.3)"""@en ;
+  rdfs:comment """\"Secondary movements refer to changes in handshape and/or orientation. It has been 
+observed for many sign languages (basically, all sign languages studied to date) that 
+in a handshape change, only the finger configuration may change, and not the finger 
+selection (this is sometimes referred to as the â€œHandshape Change Constraintâ€�). Signs 
+with changes in finger selection are exceptions that can be explained by their etymol-
+ogy, for example, by the fact that they are based on the fingerspelling system, as is true 
+for the NGT sign blue (Dutch blauw) below, which consists of a sequence of a B- ( )  
+and an L- ( ) handshape.\"((Blueprint, section 1.3.1)"""@en ;
+  rdfs:label "\"articulator-internal movements\""@en ;
+  rdfs:label "\"secondary movment\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape
+  rdf:type owl:Class ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"changes in handshape within secondary movements\""@en ;
+  rdfs:subClassOf sldc:ArticulatorInternalMovement ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_ChangeInDegreeOfCurvature
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"Change in degree of curvature\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_FingerWriggling
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"finger wrggling changes in hanshape\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_Kinking
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"Gradual change in the angle\""@en ;
+  rdfs:label "\"kinking changes in handshape\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_OpeningOrClosing
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"Opening/Closing changes in handshape\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_Rubbing
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"Rubbing changes in handshape\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInHandshape_ShiftBetweenStraddlingAndLateralContactOfTheFingersScissors
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInHandshape ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"Shift between straddling and lateral contact of the fingers scissors\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInOrientation
+  rdf:type owl:Class ;
+  rdfs:comment "DGS" ;
+  rdfs:label "\"changes of orientation in secondary movement\""@en ;
+  rdfs:subClassOf sldc:ArticulatorInternalMovement ;
+.
+sldc:ArticulatorInternalMovement_ChangesInOrientation_Bending
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInOrientation ;
+  rdfs:label "\"bending movement\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInOrientation_Rotating
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInOrientation ;
+  rdfs:label "\"rotating movement\""@en ;
+.
+sldc:ArticulatorInternalMovement_ChangesInOrientation_Shaking
+  rdf:type sldc:ArticulatorInternalMovement_ChangesInOrientation ;
+  rdfs:label "\"shaking movement\""@en ;
+.
+sldc:Asymmetrical
+  rdf:type owl:Class ;
+  rdfs:label "\"assymetrical hand movement\""@en ;
+  rdfs:subClassOf sldc:TwoHandedSigns ;
+.
+sldc:AsymmetricalDifferentHandshape
+  rdf:type sldc:SignType ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"asymmetrical different handshape\""@en ;
+.
+sldc:AsymmetricalSameHandShape
+  rdf:type sldc:SignType ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"asymmetrical same hand shape\""@en ;
+.
+sldc:AuxiliarySignLanguage
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"auxiliary sign language\""@en ;
+  rdfs:label "\"secundaire gebarentaal\""@nl ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"A sign language originated in and used by a spoken language community in certain contexts, or used in the communication between groups of hearing people that do not share a spoken language.\""@en ;
+  skos:definition "\"Een gebarentaal die ontstaan is in een gesproken taal-gemeenschap en gebruikt wordt in specifieke omstandigheden, or gebruikt wordt in de cmomunicatie tussen groepen horende mensen die geen gesproken taal delen.\""@nl ;
+.
+sldc:BackAndForth
+  rdf:type sldc:PathMovement ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"back and forth\""@en ;
+.
+sldc:BackOfHand
+  rdf:type sldc:Location_DGS_Vertical ;
+  dc:source "DGS" ;
+  rdfs:label "\"back of the hand\""@en ;
+.
+sldc:Belly
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"belly\""@en ;
+.
+sldc:Bend
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"bend\""@en ;
+.
+sldc:Bent_l
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"bent_l\"" ;
+.
+sldc:Bent_v
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"bent_v\"" ;
+.
+sldc:Body
+  rdf:type sldc:MajorLocation ;
+  dc:source "https://asl-lex.org" ;
+  rdfs:label "\"body\""@en ;
+.
+sldc:BodyAway
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"body away\""@en ;
+.
+sldc:C
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"c\"" ;
+.
+sldc:Cheek
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"cheek\""@en ;
+.
+sldc:Chest
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"chest\""@en ;
+.
+sldc:Chin
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"chin\""@en ;
+.
+sldc:Circular
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"circular\""@en ;
+.
+sldc:Closed
+  rdf:type sldc:ThumbPosition ;
+  rdfs:comment """\"contact between thumb and
+activated fingers\"(DGS Grammar)"""@en ;
+  rdfs:label "\"closed\""@en ;
+.
+sldc:Closed_b
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"closed_b\"" ;
+.
+sldc:Closed_e
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"closed_b\"" ;
+.
+sldc:Compound
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"fingerspelled loan sign\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:ConstructedAction
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"constructed action\""@en ;
+  skos:definition "\"Constructed repetition of elements of another character's behaviour, including communicative actions.\""@en ;
+.
+sldc:Contact
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"contact\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Contralateral
+  rdf:type sldc:Location ;
+  rdfs:label "\"contralateral\""@en ;
+.
+sldc:CoreLexicon
+  rdf:type owl:Class ;
+  rdfs:comment "\"But we should have a look at compounds!\"" ;
+  rdfs:comment "tow handed signs are subject to the \"Symmetry and Dominance Conditions\" (Blueprint)"@en ;
+  rdfs:label "\"core lexicon\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:CrookOfArm
+  rdf:type sldc:Location_DGS_Vertical ;
+  dc:source "DGS" ;
+  rdfs:label "\"crook of the arm\""@en ;
+.
+sldc:CrookOfArm_1
+  rdf:type sldc:Location_DGS_Vertical ;
+  dc:source "DGS" ;
+  rdfs:label "\"crook of the arm\""@en ;
+.
+sldc:Curved
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved\""@en ;
+.
+sldc:Curved_1
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_1\"" ;
+.
+sldc:Curved_4
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_4\"" ;
+.
+sldc:Curved_5
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_5\"" ;
+.
+sldc:Curved_h
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_h\"" ;
+.
+sldc:Curved_l
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_l\"" ;
+.
+sldc:Curved_v
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"curved_v\"" ;
+.
+sldc:D
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"d\"" ;
+.
+sldc:DominanceViolation
+  rdf:type sldc:SignType ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"dominance violation\""@en ;
+.
+sldc:DominantHand
+  rdf:type owl:Class ;
+  rdfs:label "\"dominant hand\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+.
+sldc:Duration
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"duration\""@en ;
+  rdfs:subClassOf sldc:Sign ;
+.
+sldc:E
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"e\"" ;
+.
+sldc:ElbowBack
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"elbow back\""@en ;
+.
+sldc:Elbows
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"elbows\""@en ;
+.
+sldc:EmptyMouthGesture
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"empty mouth gesture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"A lexicalised mouth action that is meaningless and that cannot be derived from a spoken language word.\""@en ;
+.
+sldc:Eye
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"eye\""@en ;
+.
+sldc:F
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"f\"" ;
+.
+sldc:FaceForFaceMouthGesture
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"face-for-face mouth gesture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"A mouth action in which the mouth mimics non-speech actions of the mouth such as chewing, blowing, or sucking\""@en ;
+.
+sldc:False
+  rdf:type sldc:Compound ;
+  rdf:type sldc:Contact ;
+  rdf:type sldc:FingerSpelledLoanSign ;
+  rdf:type sldc:FlexionChange ;
+  rdf:type sldc:InitializedSign ;
+  rdf:type sldc:NonActiviatedFingersStretched ;
+  rdf:type sldc:RepeatedMovement ;
+  rdf:type sldc:Spread ;
+  rdf:type sldc:SpreadChange ;
+  rdf:type sldc:ThumbContact ;
+  rdf:type sldc:Wrist_Binary ;
+  rdfs:label "\"false\""@en ;
+.
+sldc:FingerBack
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"finger back\""@en ;
+.
+sldc:FingerFront
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"finger front\""@en ;
+.
+sldc:FingerRadial
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"finger radial\""@en ;
+.
+sldc:FingerSpelledLoanSign
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"fingerspelled loan sign\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:FingerTip
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"finger tip\""@en ;
+.
+sldc:FingerUlnar
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"finger ulnar\""@en ;
+.
+sldc:Fingerspelling
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"finger spelling\""@en ;
+  rdfs:subClassOf sldc:Sign ;
+  skos:definition "\"Manual representation of writing symbols from a spoken language, such as a hand alphabet for Latin scripts\""@en ;
+.
+sldc:Fingerspelling_Fingerspelling-And-Sign
+  rdf:type owl:Class ;
+  rdfs:comment """\"These are cases where a fingerspelled form is used before,
+after or simultaneously with a sign;\" (Blueprint 2.2.2)"""@en ;
+  rdfs:label "\"Fingerspelling + sign\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling ;
+.
+<http://example.org/sign_language_data_cat#Fingerspelling_Fingerspelling_+_sign>
+  rdf:type owl:Class ;
+  rdfs:comment """\"These are cases where a fingerspelled form is used before,
+after or simultaneously with a sign;\" (Blueprint)"""@en ;
+  rdfs:label "\"Fingerspelling + sign\""@en ;
+.
+sldc:Fingerspelling_Initialization
+  rdf:type owl:Class ;
+  rdfs:comment """\"The handshape associated with the first
+letter of the corresponding spoken language word forms part of the sign, e.g. â€˜Wâ€™
+in the sign water in ASL and â€˜Vâ€™ in the sign vegetarian in NGT and other sign
+languages.\" (Blueprint 2.2.2)"""@en ;
+  rdfs:label "\"fingerspelling -- Initialization\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling ;
+.
+sldc:Fingerspelling_Multiple-letter_signs
+  rdf:type owl:Class ;
+  rdfs:comment """\"In these signs, more than one
+letter from the corresponding spoken word is used. There are various subtypes,
+which differ in the number of letters represented and in their phonological
+integration.\" (Bluepring 2.2.2)"""@en ;
+  rdfs:label "\"Multiple-letter signs\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling ;
+.
+sldc:Fingerspelling_Multiple-letter_signs_Acronym-Abbreviation
+  rdf:type owl:Class ;
+  rdfs:label "\"Acronyms and abbreviations\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling_Multiple-letter_signs ;
+.
+sldc:Fingerspelling_Multiple-letter_signs_NativizedFingerspelledLoans
+  rdf:type owl:Class ;
+  rdfs:comment """\"Certain fingerspelled words may undergo a process of
+reduction (deletion of certain letters), and/or a combination of simultaneous and sequential elements.\" (Blueprint 2.2.2)"""@en ;
+  rdfs:label "\"Nativized fingerspelled loans\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling_Multiple-letter_signs ;
+.
+sldc:Fingerspelling_Multiple-letter_signs_SimultaneousForms
+  rdf:type owl:Class ;
+  rdfs:comment """\"In some interesting cases, letters are partially or even fully
+simultaneously signed. As for the latter, they are rare because it is articulatorily difficult
+to simultaneously represent letters\" (Blueprint 2.2.2)"""@en ;
+  rdfs:label "\"Simultaneous forms\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling_Multiple-letter_signs ;
+.
+sldc:Fingerspelling_OneByOne
+  rdf:type owl:Class ;
+  rdfs:comment """\"Fingerspelling may be used in different ways:
+(i) One-by-one fingerspelling: This is the spelling of the whole word. This type of
+fingerspelling is sometimes used when expressing a concept (especially, but not
+exclusively, proper nouns) for which there is no corresponding sign (e.g. D-A-V-I-D).\" (Blueprint, 2.2.2)"""@en ;
+  rdfs:label "\"one by one fingerspelling\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling ;
+.
+sldc:Fingerspelling_Single_manual_letter_signs
+  rdf:type owl:Class ;
+  rdfs:comment """\"The handshape associated with the first letter
+of the corresponding spoken language word is used, possibly with repetition of
+the movement, e.g. â€˜Dâ€™ (â€˜daughterâ€™) in BSL.\" (Blueprint 2.2.2)"""@en ;
+  rdfs:label "\"Single manual letter signs (SMLS)\""@en ;
+  rdfs:subClassOf sldc:Fingerspelling ;
+.
+sldc:Fingertip
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"fingertip\""@en ;
+.
+sldc:Flat_1
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_1\"" ;
+.
+sldc:Flat_4
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_4\"" ;
+.
+sldc:Flat_b
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_b\"" ;
+.
+sldc:Flat_h
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_h\"" ;
+.
+sldc:Flat_horns
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_horns\"" ;
+.
+sldc:Flat_ily
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_ily\"" ;
+.
+sldc:Flat_m
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_m\"" ;
+.
+sldc:Flat_n
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_n\"" ;
+.
+sldc:Flat_o
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_o\"" ;
+.
+sldc:Flat_v
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flat_v\"" ;
+.
+sldc:Flatspread_5
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flatspread_5\"" ;
+.
+sldc:FlexionChange
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"flexion change\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Forearm
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"forearm\""@en ;
+.
+sldc:ForearmBack
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"forearm back\""@en ;
+.
+sldc:ForearmFront
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"forearm front\""@en ;
+.
+sldc:ForearmRadial
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"forearm radial\""@en ;
+.
+sldc:ForearmUlnar
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"forearm ulnar\""@en ;
+.
+sldc:Forehead
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"forehead\""@en ;
+.
+sldc:G
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"g\"" ;
+.
+sldc:Goody_goody
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"goody_goody\"" ;
+.
+sldc:H
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"h\"" ;
+.
+sldc:HamNoSys
+  rdf:type owl:Class ;
+  rdfs:label "\"Hamburg Sign Language Notation System\""@en ;
+  rdfs:subClassOf sldc:NotationsForSignLanguages ;
+.
+sldc:HamNoSys_HandShape
+  rdf:type owl:Class ;
+  rdfs:label "\"hand shape\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_Location
+  rdf:type owl:Class ;
+  rdfs:label "\"location\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_Movement_1
+  rdf:type owl:Class ;
+  rdfs:label "\"movement 1\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_Movement_2
+  rdf:type owl:Class ;
+  rdfs:label "\"movement 2\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_Orientation
+  rdf:type owl:Class ;
+  rdfs:label "\"orientation\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_TwoHanded
+  rdf:type owl:Class ;
+  rdfs:label "\"two-handed\""@en ;
+  rdfs:subClassOf sldc:HamNoSys ;
+.
+sldc:HamNoSys_hamfinger2
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 2\""@en ;
+  ontolex:lexicalForm sldc:hamfinger2 ;
+.
+sldc:HamNoSys_hamfinger23
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 2 and 3\""@en ;
+  ontolex:lexicalForm sldc:hamfinger23 ;
+.
+sldc:HamNoSys_hamfinger2345
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 2, 3, 4 and 5\""@en ;
+  ontolex:lexicalForm sldc:hamfinger2345 ;
+.
+sldc:HamNoSys_hamfinger23spread
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 2 and 3 spread\""@en ;
+  ontolex:lexicalForm sldc:hamfinger23spread ;
+.
+sldc:HamNoSys_hamfist
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"fist\""@en ;
+  ontolex:lexicalForm sldc:hamfist ;
+.
+sldc:HamNoSys_hamflathand
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"flat hand\""@en ;
+  ontolex:lexicalForm sldc:hamflathand ;
+.
+sldc:HamNoSys_hampinch12
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 1 and 2 pinched\""@en ;
+  ontolex:lexicalForm sldc:hampinch12 ;
+.
+sldc:HamNoSys_hampinch12open
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"finger 1 and 2 pinched, open\""@en ;
+  ontolex:lexicalForm sldc:hampinch12open ;
+.
+sldc:HamNoSys_hampinchall
+  rdf:type sldc:HamNoSys_HandShape ;
+  rdf:type ontolex:LexicalEntry ;
+  rdfs:label "\"all fingers pinched\""@en ;
+  ontolex:lexicalForm sldc:hampinchall ;
+.
+sldc:Hand
+  rdf:type sldc:MajorLocation ;
+  dc:source "https://asl-lex.org" ;
+  rdfs:label "\"hand\""@en ;
+.
+sldc:HandAway
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"hand away\""@en ;
+.
+sldc:HandShape
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"handshape\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+  skos:definition "\"The configuration of fingers and thumb in a sign.\""@en ;
+.
+sldc:Head
+  rdf:type sldc:MajorLocation ;
+  dc:source "https://asl-lex.org" ;
+  rdfs:label "\"head\""@en ;
+.
+sldc:HeadAway
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"head away\""@en ;
+.
+sldc:HeadTop
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"head top\""@en ;
+.
+sldc:Heel
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"heel\""@en ;
+.
+sldc:Hips
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"hips\""@en ;
+.
+sldc:HomeSign
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"home sign\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"Signing developed and used by a deaf person with a restricted group of people in his/her surroundings.\""@en ;
+.
+sldc:Horns
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"horns\"" ;
+.
+sldc:I
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"i\"" ;
+.
+sldc:Ily
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"ily\"" ;
+.
+sldc:InFrontOfSigner
+  rdf:type sldc:Location ;
+  rdfs:label "\"in front of signer\""@en ;
+.
+sldc:Index
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index\""@en ;
+.
+sldc:Index_Middle
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index and middle\""@en ;
+.
+sldc:Index_Middle_Pinky
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index,middle and pinky\""@en ;
+.
+sldc:Index_Middle_Ring
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index,middle and ring\""@en ;
+.
+sldc:Index_Middle_Ring_Pinky
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index,middle, ring and pinky\""@en ;
+.
+sldc:Index_Pinky
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"index and pinky\""@en ;
+.
+sldc:InitializedSign
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"initialized sign\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:K
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"k\"" ;
+.
+sldc:L
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"l\"" ;
+.
+sldc:LexicalClass
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"lexical class\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:LexicalProperties
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"lexical properties\""@en ;
+  rdfs:subClassOf sldc:Sign ;
+.
+sldc:Location
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"location\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+  skos:definition "\"The place of articulation of a sign.\""@en ;
+.
+sldc:Location_DGS_Horizontal
+  rdf:type owl:Class ;
+  rdfs:label "\"horizontal\""@en ;
+  rdfs:subClassOf sldc:Location ;
+.
+sldc:Location_DGS_Horizontal_BehindTheBody
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"behind the body\""@en ;
+.
+sldc:Location_DGS_Horizontal_BodyContact
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"body contact\""@en ;
+.
+sldc:Location_DGS_Horizontal_FarInFrontOfTheBoddy
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"far in front of the body\""@en ;
+.
+sldc:Location_DGS_Horizontal_NearTheBody
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"near the body\""@en ;
+.
+sldc:Location_DGS_Horizontal_NeutralSpaceInFrontOfTheChest
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"neutral space (in front of the chest)\""@en ;
+.
+sldc:Location_DGS_Horizontal_NextToTheBodyRightOrLeft
+  rdf:type sldc:Location_DGS_Horizontal ;
+  rdfs:label "\"next to the body (right/left)\""@en ;
+.
+sldc:Location_DGS_Vertical
+  rdf:type owl:Class ;
+  rdfs:label "\"vertical\""@en ;
+  rdfs:subClassOf sldc:Location ;
+.
+sldc:Major
+  rdf:type owl:Class ;
+  rdfs:label "\"major\""@en ;
+  rdfs:subClassOf sldc:LexicalClass ;
+.
+sldc:MajorLocation
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"major location\""@en ;
+  rdfs:subClassOf sldc:Location ;
+.
+sldc:MannerOfMovment
+  rdf:type owl:Class ;
+  rdfs:comment """\"The  manner  of  movement  typically  affects  the  whole  sign,  and  possible  move-
+ment  manners  â€“  such  as  tense  vs.  lax  movement  and  quick  vs.  slow  movement  \" (Blueprint Section 1.3)"""@en ;
+  rdfs:label "\"manner of movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+.
+sldc:ManuallyCodedSpeech
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"manually coded speech\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"A communication system that is similar to sign supported speech but that uses specific conventions for manually representing grammatical forms of the spoken language.\""@en ;
+.
+sldc:Middle
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"middle\""@en ;
+.
+sldc:Middle_Ring
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"middle and ring\""@en ;
+.
+sldc:Middle_Ring_Pinky
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"middle, ring and pinky\""@en ;
+.
+sldc:Minor
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"minor\""@en ;
+  rdfs:subClassOf sldc:LexicalClass ;
+.
+sldc:MinorLocation
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"minor location\""@en ;
+  rdfs:subClassOf sldc:Location ;
+.
+sldc:Mouth
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"mouth\""@en ;
+.
+sldc:MouthGesture
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"mouth gesture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"A mouth action that is not derived from a spoken language word.\""@en ;
+.
+sldc:Mouthing
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"mouthing\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"Mouth action that is derived from a spoken language word.\""@en ;
+.
+sldc:Mouthing_FullForm
+  rdf:type owl:Class ;
+  rdfs:label "\"full forms\""@en ;
+  rdfs:subClassOf sldc:Mouthing ;
+.
+sldc:Mouthing_Mounthing_And_Fingerspelling
+  rdf:type owl:Class ;
+  rdfs:label "\"mouthing and fingerspelling\""@en ;
+  rdfs:subClassOf sldc:Mouthing ;
+.
+sldc:Mouthing_ReducedForms
+  rdf:type owl:Class ;
+  rdfs:label "\"reduced forms\""@en ;
+  rdfs:subClassOf sldc:Mouthing ;
+.
+sldc:Movement
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"movement\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+  skos:definition "\"The lexical movement in a sign.\""@en ;
+.
+sldc:Movement_AmountOfRepetitions
+  rdf:type owl:Class ;
+  rdfs:label "\"amount of repetitions of the movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+.
+sldc:Movement_Tempo
+  rdf:type owl:Class ;
+  rdfs:label "\"tempo of the movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+.
+sldc:Nail
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"nail\""@en ;
+.
+sldc:Neck
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"neck\""@en ;
+.
+sldc:Neutral
+  rdf:type sldc:MajorLocation ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  dc:source "https://asl-lex.org" ;
+  rdfs:label "\"neutral space\""@en ;
+  rdfs:label "\"neutral\""@en ;
+.
+sldc:NonActivatedFingers
+  rdf:type owl:Class ;
+  rdfs:label "\"non activated fingers\""@en ;
+  rdfs:subClassOf sldc:HandShape ;
+.
+sldc:NonActiviatedFingersStretched
+  rdf:type owl:Class ;
+  rdfs:label "\"stretched\""@en ;
+  rdfs:subClassOf sldc:NonActivatedFingers ;
+.
+sldc:NonCoreLexicon
+  rdf:type owl:Class ;
+  rdfs:label "\"non core lexicon\""@en ;
+  rdfs:subClassOf sldc:LexicalProperties ;
+.
+sldc:NonCoreLexicon_Buoys
+  rdf:type owl:Class ;
+  rdfs:comment """\"In certain discourse contexts, sign languages often employ a specific strategy to keep
+track of the referents: buoys (Liddell 2003; see the section on buoys in the Pragmatics
+Part [Pragmatics â€“ Section 2.2.3] for further information). This involves keeping the
+non-dominant hand in a stationary configuration while the dominant hand continues
+to sign. This means that the two hands are not subject to the constraints that normally
+operate for lexical signs, since using a buoy involves doing two different things with
+each hand at the same time.\" (Blueprint, 1.2.3)"""@en ;
+  rdfs:label "\"buoys\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon ;
+.
+sldc:NonCoreLexicon_ClassifierConstructions
+  rdf:type owl:Class ;
+  rdfs:comment """\"Broadly, classifier constructions are used to give spatial and motion descriptions of objects.\"The classifier system makes use of basic sub-lexical units (handshapes, movements,
+locations, etc.) but combines them in ways which go beyond the basic core lexicon, creating structures which may be morphologically and semantically rich. Classifier constructions provide a highly efficient and economic means of conveying spatial descriptions. (Blueprint, section 1.2.1)"""@en ;
+  rdfs:comment "\"In sign languages, the term classifier construction refers to a morphological system that can express events and states. ... They use handshape classifiers to represent movement, location, and shape. Classifiers differ from signs in their morphology, namely that signs consist of a single morpheme. Signs are composed of three meaningless phonological features: handshape, location, and movement. Classifier, on the other hand, consist of many morphemes. Specifically, the handshape, location, and movement are all meaningful on their own. ... Classifier constructions act as verbs.\" (Wikipedia)"@en ;
+  rdfs:label "\"classifier constructions\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon ;
+.
+sldc:NonCoreLexicon_ExtensionAndSurfaceClassifiers
+  rdf:type owl:Class ;
+  rdfs:comment "\"The handshape represents the depth or width of an entity. For example, a thin wire, a narrow board or the wide surface of a car's roof. These are not always considered to be classifiers in more recent analyses\" (https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"Extension and surface classifiers\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_ClassifierConstructions ;
+.
+sldc:NonCoreLexicon_Handling-InstrumentClassifiers
+  rdf:type owl:Class ;
+  rdfs:comment "\"The handshape represents the hands handling an entity or instrument, such as a knife. They resemble whole entity classifiers, but they semantically imply an agent handling the entity. Just as with whole entity classifiers, the entity in handling classifiers does not have to be a physical object.\" (https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"Handling/instrument classifiers\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_ClassifierConstructions ;
+.
+sldc:NonCoreLexicon_LimbClassifers
+  rdf:type owl:Class ;
+  rdfs:comment "\"Movement represents the location of an entity through a short, downward movement. The entity's orientation can be represented by shifting the hand's orientation.\"(https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"limb classifiers\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_ClassifierConstructions ;
+.
+sldc:NonCoreLexicon_Pointing
+  rdf:type owl:Class ;
+  rdfs:comment """\"Pointing is very common in sign language discourse and is undoubtedly the type of
+manual activity that looks most like the sort of gesture that non-signers commonly
+use to indicate deictically or demonstratively. However, pointing in sign languages
+fulfills a wide range of functions, and has been associated with various linguistic elements,
+including pronouns [Lexicon â€“ Section 3.7], determiners [Lexicon â€“ Section
+3.6], demonstratives [Syntax â€“ Section 4.1.2], locative adverbials [Syntax â€“ Section
+6.4.2.3], and agreement markers [Lexicon â€“ Section 3.3.4].
+Distinguishing between these different functions may involve paying attention
+not only to the syntactic contexts in which a given point may (or may not) occur, but
+also looking carefully at the form of the sign. Differences in handshape and orientation
+may set apart different types of point; additionally, movement, in terms of direction,
+length, repetition and quality (tensed or lax, for example), may also give an
+indication that a point is of one type or another (Pfau\" \"from Blupering, Section 1.2.2)"""@en ;
+  rdfs:label "\"pointing\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon ;
+.
+sldc:NonCoreLexicon_Pointing_AgreementMarkers
+  rdf:type owl:Class ;
+  rdfs:label "\"agremment markers\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_Pointing ;
+.
+sldc:NonCoreLexicon_Pointing_Determiners
+  rdf:type owl:Class ;
+  rdfs:label "\"determiners\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_Pointing ;
+.
+sldc:NonCoreLexicon_Pointing_LocativeAdverbials
+  rdf:type owl:Class ;
+  rdfs:label "\"locative adverbials\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_Pointing ;
+.
+sldc:NonCoreLexicon_Pointing_Pronouns
+  rdf:type owl:Class ;
+  rdfs:label "\"pronouns\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_Pointing ;
+.
+sldc:NonCoreLexicon_WholeEntityClassifier
+  rdf:type owl:Class ;
+  rdfs:comment "\"The handshape represents an object. It can also represent a non-physical concept, such as culture\" (https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"whole entity classifier\""@en ;
+  rdfs:subClassOf sldc:NonCoreLexicon_ClassifierConstructions ;
+.
+sldc:NonDominantHand
+  rdf:type owl:Class ;
+  rdfs:label "\"non dominant hand\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+.
+sldc:NonManualTorso
+  rdf:type owl:Class ;
+  rdfs:label "\"Upper face\""@en ;
+  rdfs:subClassOf sldc:NonManual_Body ;
+.
+sldc:NonManual_Arm
+  rdf:type owl:Class ;
+  rdfs:label "\"arm\""@en ;
+  rdfs:subClassOf sldc:Phonology_NonManual ;
+.
+sldc:NonManual_Body
+  rdf:type owl:Class ;
+  rdfs:label "\"body\""@en ;
+  rdfs:subClassOf sldc:Phonology_NonManual ;
+.
+sldc:NonManual_Face
+  rdf:type owl:Class ;
+  rdfs:label "\"face\""@en ;
+  rdfs:subClassOf sldc:NonManual_Head ;
+.
+sldc:NonManual_Face_Cheeks
+  rdf:type owl:Class ;
+  rdfs:label "\"nose\""@en ;
+  rdfs:subClassOf sldc:NonManual_LowerFace ;
+.
+sldc:NonManual_Face_Cheeks_PuffedCheeks
+  rdf:type sldc:NonManual_Face_Cheeks ;
+  rdfs:label "\"puffed cheecks\""@en ;
+.
+sldc:NonManual_Face_Chin
+  rdf:type owl:Class ;
+  rdfs:label "\"nose\""@en ;
+  rdfs:subClassOf sldc:NonManual_LowerFace ;
+.
+sldc:NonManual_Face_EyeAperture
+  rdf:type owl:Class ;
+  rdfs:label "\"eye aperture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Eyes ;
+.
+sldc:NonManual_Face_EyeGaze
+  rdf:type owl:Class ;
+  rdfs:label "\"eye gaze\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Eyes ;
+.
+sldc:NonManual_Face_Eyebrow
+  rdf:type owl:Class ;
+  rdfs:label "\"eyebrow\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Eyes ;
+.
+sldc:NonManual_Face_Eyes
+  rdf:type owl:Class ;
+  rdfs:label "\"eyes\""@en ;
+  rdfs:subClassOf sldc:NonManual_UpperFace ;
+.
+sldc:NonManual_Face_Mouth
+  rdf:type owl:Class ;
+  rdfs:label "\"mouth\""@en ;
+  rdfs:subClassOf sldc:NonManual_LowerFace ;
+.
+sldc:NonManual_Face_Mouth_LipOrCornerOfTheMouth
+  rdf:type owl:Class ;
+  rdfs:label "\"Lips\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+.
+sldc:NonManual_Face_Mouth_Tongue
+  rdf:type owl:Class ;
+  rdfs:label "\"Tongue\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+.
+sldc:NonManual_Face_Nose
+  rdf:type owl:Class ;
+  rdfs:label "\"nose\""@en ;
+  rdfs:subClassOf sldc:NonManual_LowerFace ;
+.
+sldc:NonManual_Head
+  rdf:type owl:Class ;
+  rdfs:label "\"head\""@en ;
+  rdfs:subClassOf sldc:Phonology_NonManual ;
+.
+sldc:NonManual_LowerFace
+  rdf:type owl:Class ;
+  rdfs:label "\"lower face\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face ;
+.
+sldc:NonManual_UpperFace
+  rdf:type owl:Class ;
+  rdfs:label "\"Upper face\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face ;
+.
+sldc:None
+  rdf:type sldc:PathMovement ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"none\""@en ;
+.
+sldc:NotationsForSignLanguages
+  rdf:type owl:Class ;
+  rdfs:label "\"Notations for sign languages\""@en ;
+.
+sldc:NumberOfMorphemes
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"number of morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_Morphemes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 6 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+.
+sldc:O
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"o\"" ;
+.
+sldc:OneHanded
+  rdf:type sldc:SignType ;
+  rdfs:label "\"one handed\""@en ;
+.
+sldc:Open
+  rdf:type sldc:ThumbPosition ;
+  rdfs:comment "\"thumb in opposition to the other fingers\"(DGS Grammar)"@en ;
+  rdfs:label "\"open\""@en ;
+  rdfs:label "\"opposed\" (DGS Grammar)"@en ;
+.
+sldc:Open_8
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"open_8\"" ;
+.
+sldc:Open_b
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"open_b\"" ;
+.
+sldc:Open_e
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"open_e\"" ;
+.
+sldc:Open_f
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"open_f\"" ;
+.
+sldc:Open_h
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"open_h\"" ;
+.
+sldc:Orientation
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"orientation\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+  skos:definition "\"The orientation of the hand or fingers in a sign.\""@en ;
+.
+sldc:Other
+  rdf:type sldc:MajorLocation ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:PathMovement ;
+  rdf:type sldc:SecondMinorLocation ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"other\""@en ;
+.
+sldc:OtherAway
+  rdf:type sldc:MajorLocation ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:PathMovement ;
+  rdf:type sldc:SecondMinorLocation ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"other away\""@en ;
+.
+sldc:P
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"p\"" ;
+.
+sldc:Palm
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"palm\""@en ;
+.
+sldc:PalmBack
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"palm back\""@en ;
+.
+sldc:PathMovement
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:comment "Also called \"primary movements\", which \"involve  movement  of  the  whole  hand  (on  the  body  or  in  space) \" (from BluePrint, section 1.3)"@en ;
+  rdfs:label "\"path movement\""@en ;
+  rdfs:label "\"primary movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+.
+sldc:PathMovement_Direction
+  rdf:type owl:Class ;
+  rdfs:comment """DGS: \"relation to body(part), relation to points in space; horizontal/frontal/vertical; towards the
+side of the active/non-active hand, forward/backward, upward/downward\""""@en ;
+  rdfs:label "\"direction of path movement\""@en ;
+  rdfs:subClassOf sldc:PathMovement ;
+.
+sldc:PathMovement_Manner
+  rdf:type owl:Class ;
+  dc:source "DGS" ;
+  rdfs:label "\"manner of the path movement\""@en ;
+  rdfs:subClassOf sldc:PathMovement ;
+.
+sldc:PathMovement_Manner_Intensity
+  rdf:type owl:Class ;
+  rdfs:label "\"intensity of the path movement\""@en ;
+  rdfs:subClassOf sldc:PathMovement_Manner ;
+.
+sldc:PathMovement_Manner_Size
+  rdf:type owl:Class ;
+  rdfs:label "\"size of the path movement\""@en ;
+  rdfs:subClassOf sldc:PathMovement_Manner ;
+.
+sldc:PathMovement_Shape
+  rdf:type owl:Class ;
+  rdfs:label "\"shape of the path movement\""@en ;
+  rdfs:subClassOf sldc:PathMovement ;
+.
+sldc:Phonology
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:comment """\"â€œphonologyâ€� in a modality-independent way, that is, as dealing with the smallest 
+elements of language that can distinguish meaning but do themselves not carry meaning.\" (SignLanguage:Blueprint, section 01)"""@en ;
+  rdfs:label "\"phonology\""@en ;
+  rdfs:subClassOf sldc:Sign ;
+.
+sldc:Phonology_Flexion
+  rdf:type owl:Class ;
+  rdfs:label "\"flexion\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Phonology_Flexion_Bent
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"bent\""@en ;
+.
+sldc:Phonology_Flexion_Crossed
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"crossed\""@en ;
+.
+sldc:Phonology_Flexion_Curved
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"curved\""@en ;
+.
+sldc:Phonology_Flexion_Flat
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"flat\""@en ;
+.
+sldc:Phonology_Flexion_FullyClosed
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"fully closed\""@en ;
+.
+sldc:Phonology_Flexion_FullyOpen
+  rdf:type sldc:Phonology_Flexion ;
+  rdfs:label "\"fully open\""@en ;
+.
+sldc:Phonology_LexicalLevel
+  rdf:type owl:Class ;
+  rdfs:label "\"lexical level\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Phonology_Manual
+  rdf:type owl:Class ;
+  rdfs:label "\"manual\""@en ;
+  rdfs:subClassOf sldc:Phonology ;
+.
+sldc:Phonology_Morphemes
+  rdf:type owl:Class ;
+  rdfs:label "\"morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Phonology_Morphemes_ExtensionMorphemes
+  rdf:type owl:Class ;
+  rdfs:comment "\"Movement does not represent actual motion, but the outline of the entity's shape or perimeter. It can also represent the configuration of multiple similar entities, such as a line of books.\"(https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"extension morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_Morphemes ;
+.
+sldc:Phonology_Morphemes_LocationMorphemes
+  rdf:type owl:Class ;
+  rdfs:comment "\"Movement represents the location of an entity through a short, downward movement. The entity's orientation can be represented by shifting the hand's orientation\"(https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"location morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_Morphemes ;
+.
+sldc:Phonology_Morphemes_MannerMorphemes
+  rdf:type owl:Class ;
+  rdfs:comment "\"Movement represents the manner of motion, but not the path.\" (https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"motion morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_Morphemes ;
+.
+sldc:Phonology_Morphemes_MotionMorphemes
+  rdf:type owl:Class ;
+  rdfs:comment "\"Movement represents the entity's movement along a path.\"(https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:label "\"motion morphemes\""@en ;
+  rdfs:subClassOf sldc:Phonology_Morphemes ;
+.
+sldc:Phonology_NonManual
+  rdf:type owl:Class ;
+  rdfs:label "\"non manual\""@en ;
+  rdfs:subClassOf sldc:Phonology ;
+.
+sldc:Phonology_NonManual_MusicalWhistle
+  rdf:type sldc:NonManual_Face_Mouth ;
+  rdfs:comment "from DGS Grammar" ;
+  rdfs:label "\"musical whistle, only with lips\""@en ;
+.
+sldc:Phonology_NonManual_Shoulder
+  rdf:type owl:Class ;
+  rdfs:label "\"shoulder\""@en ;
+  rdfs:subClassOf sldc:Phonology_NonManual ;
+.
+sldc:Phonology_NonManual_ShrugWithShoulders
+  rdf:type sldc:Phonology_NonManual_Shoulder ;
+  rdfs:comment "From DGS Grammar" ;
+  rdfs:label "\"shrug with shoulders\""@en ;
+.
+sldc:Phonology_NonManual_Sob
+  rdf:type sldc:Phonology_NonManual ;
+  rdfs:comment "from DGS Grammar" ;
+  rdfs:label "\"sob\""@en ;
+.
+sldc:Phonology_NonManual_Sulk
+  rdf:type sldc:Phonology_NonManual ;
+  rdfs:comment "from DGS Grammar" ;
+  rdfs:label "\"sulk\""@en ;
+.
+sldc:Phonology_NonManual_Twitch
+  rdf:type sldc:NonManual_Face_Eyes ;
+  rdfs:comment "from DGS Grammar" ;
+  rdfs:label "\"twitch\""@en ;
+.
+sldc:Phonology_NonManual_WhistleWithTheLips
+  rdf:type sldc:NonManual_Face_Mouth ;
+  rdfs:comment "from DGS Grammar" ;
+  rdfs:label "whistle iwth the lips, and finger in mouth\""@en ;
+.
+sldc:Phonology_Processes
+  rdf:type owl:Class ;
+  rdfs:label "\"non manual\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Phonology_ToBeClassified
+  rdf:type owl:Class ;
+  rdfs:label "\"still to be classifed\""@en ;
+  rdfs:subClassOf sldc:Phonology ;
+.
+sldc:Pinky
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"pinky\""@en ;
+.
+sldc:R
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"r\"" ;
+.
+sldc:RelativeOrientation
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"relative orientation\""@en ;
+  rdfs:subClassOf sldc:Orientation ;
+  skos:definition "\"Orientation of the articulator in terms of the side of the active articulator that faces the end location of the sign.\""@en ;
+.
+sldc:RelativeOrientation_AwayFromTorso
+  rdf:type sldc:RelativeOrientation ;
+  rdfs:label "\"away from torso\""@en ;
+.
+sldc:RelativeOrientation_TowardsTorso
+  rdf:type sldc:RelativeOrientation ;
+  rdfs:label "\"towards torso\""@en ;
+.
+sldc:RepeatedMovement
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"repeated movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+  skos:definition "\"Manual movement that has multiple cycles.\""@en ;
+.
+sldc:Ring
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"ring\""@en ;
+.
+sldc:S
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"s\"" ;
+.
+sldc:SecondMinorLocation
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"second minor location\""@en ;
+  rdfs:subClassOf sldc:Location ;
+.
+sldc:SelectedFingers
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"activitated fingers\""@en ;
+  rdfs:label "\"selected fingers\""@en ;
+  rdfs:subClassOf sldc:HandShape ;
+.
+sldc:SelectedFingers_FormAngled
+  rdf:type owl:Class ;
+  rdfs:label "\"angled form\""@en ;
+  rdfs:subClassOf sldc:SelectedFingers ;
+.
+sldc:SelectedFingers_FormArced
+  rdf:type owl:Class ;
+  rdfs:label "\"arced form\""@en ;
+  rdfs:subClassOf sldc:SelectedFingers ;
+.
+sldc:SelectedFingers_FormStraddled
+  rdf:type owl:Class ;
+  rdfs:label "\"straddled form\""@en ;
+  rdfs:subClassOf sldc:SelectedFingers ;
+.
+sldc:Shoulder
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"shoulder\""@en ;
+.
+sldc:SideFingers
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"side of the fingers\""@en ;
+.
+sldc:SideHand
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"side of the hand\""@en ;
+.
+sldc:Sign
+  rdf:type owl:Class ;
+  rdfs:comment "\" signs consist of a single morpheme. Signs are composed of three meaningless phonological features: handshape, location, and movement. \" (https://en.wikipedia.org/wiki/Classifier_constructions_in_sign_languages#Clasifier_handshapes)"@en ;
+  rdfs:comment "\"The sign (gestures, facial expressions, etc.\" as used in sign languages\""@en ;
+  rdfs:label "\"Sign\""@en ;
+  rdfs:subClassOf owl:Thing ;
+.
+sldc:SignDuration
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:comment "In ms" ;
+  rdfs:label "\"sign duration\""@en ;
+  rdfs:subClassOf sldc:Duration ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 2603 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 200 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+.
+sldc:SignGloss
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"sign gloss\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"Written word from a spoken language that is used to represent a lexical item in sign language.\""@en ;
+.
+sldc:SignLanguage
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"sign language \""@en ;
+  skos:definition "\"A visual language used by a deaf community.\""@en ;
+.
+sldc:SignParameter
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"sign parameter\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"One of the building blocks of the form of a sign in a loose phonological description in the tradition of Stokoe's book \"Sign Language Structure\" from 1960.\""@en ;
+.
+sldc:SignSupportedSpeech
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"sign supported speech\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"Any mix between spoken and signed language where the spoken language word order is more prominent\""@en ;
+.
+sldc:SignType
+  rdf:type owl:Class ;
+  rdfs:label "\"sign type\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Spiral
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "\"From the Blueprinp, section 1.3.1\""@en ;
+  rdfs:label "\"spiral\""@en ;
+.
+sldc:SpokenLanguage
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"spoken language\""@en ;
+  skos:definition "\"An auditory-visual language used primarily by a hearing community.\""@en ;
+.
+sldc:Spread
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"spread\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:SpreadChange
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"spread change\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:Spread_e
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"spread_e\"" ;
+.
+sldc:Spread_open_e
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"spread_open_e\"" ;
+.
+sldc:Stacked_5
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"stacked_5\"" ;
+.
+sldc:Straight
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"straight\""@en ;
+.
+sldc:Symmetrical
+  rdf:type owl:Class ;
+  rdfs:label "\"symmetrical hand signs\""@en ;
+  rdfs:subClassOf sldc:TwoHandedSigns ;
+.
+sldc:SymmetricalOrAlternating
+  rdf:type sldc:SignType ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"symmetrical or alternating\""@en ;
+.
+sldc:Symmetrical_Alternating
+  rdf:type sldc:Symmetrical ;
+  rdfs:label "\"alternating hand movement\""@en ;
+.
+sldc:Symmetrical_MirrorInvertedMovmenet
+  rdf:type sldc:Symmetrical ;
+  rdfs:label "\"mirror-inverted movement\""@en ;
+.
+sldc:Symmetrical_ParallelMovement
+  rdf:type sldc:Symmetrical ;
+  rdfs:label "\"parallel hand movement\""@en ;
+.
+sldc:SymmetryViolation_1
+  rdf:type sldc:SignType ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"symmetry violation\""@en ;
+.
+sldc:SynchronousMovement
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"synchronous movement\""@en ;
+  rdfs:subClassOf sldc:Movement ;
+  skos:definition "\"Synchronous movement of the two active articulators\""@en ;
+.
+sldc:T
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"t\"" ;
+.
+sldc:Thumb
+  rdf:type sldc:SelectedFingers ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"thumb\""@en ;
+.
+sldc:ThumbContact
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"thumb position\""@en ;
+  rdfs:subClassOf sldc:HandShape ;
+.
+sldc:ThumbPosition
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"thumb position\""@en ;
+  rdfs:subClassOf sldc:HandShape ;
+.
+sldc:TorsoBottom
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"torso bottom\""@en ;
+.
+sldc:TorsoMid
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"torso mid\""@en ;
+.
+sldc:TorsoTop
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"torso top\""@en ;
+.
+sldc:True
+  rdf:type sldc:Compound ;
+  rdf:type sldc:Contact ;
+  rdf:type sldc:FingerSpelledLoanSign ;
+  rdf:type sldc:FlexionChange ;
+  rdf:type sldc:InitializedSign ;
+  rdf:type sldc:RepeatedMovement ;
+  rdf:type sldc:Spread ;
+  rdf:type sldc:SpreadChange ;
+  rdf:type sldc:ThumbContact ;
+  rdf:type sldc:Wrist_Binary ;
+  rdfs:label "\"true\""@en ;
+.
+sldc:TwoHandedSigns
+  rdf:type owl:Class ;
+  rdfs:label "\"two-handed signs\""@en ;
+  rdfs:subClassOf sldc:Phonology_Manual ;
+.
+sldc:UnderChin
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"under chin\""@en ;
+.
+sldc:UpperArm
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"upper arm\""@en ;
+.
+sldc:UpperLip
+  rdf:type sldc:MinorLocation ;
+  rdf:type sldc:SecondMinorLocation ;
+  rdfs:label "\"upper lip\""@en ;
+.
+sldc:V
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"v\"" ;
+.
+sldc:VideoDuration
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:comment "In ms" ;
+  rdfs:label "\"video duration\""@en ;
+  rdfs:subClassOf sldc:Duration ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 3737 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 701 ;
+      owl:onProperty sldc:hasNumberOfMorphemes ;
+    ] ;
+.
+sldc:VillageSignLanguage
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"village sign language\""@en ;
+  rdfs:subClassOf sldc:SignLanguage ;
+  skos:definition "\"A sign language used by deaf and hearing people only in a relatively constrained local context such as a village\""@en ;
+.
+sldc:W
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"w\"" ;
+.
+sldc:Waist
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"waist\""@en ;
+.
+sldc:Waves
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "\"From the Blueprinp, section 1.3.1\""@en ;
+  rdfs:label "\"waves\""@en ;
+.
+sldc:WholeFaceMouthGesture
+  rdf:type owl:Class ;
+  dc:source "https://datcatinfo.termweb.eu/search/terms" ;
+  rdfs:label "\"whole face mouth gesture\""@en ;
+  rdfs:subClassOf sldc:NonManual_Face_Mouth ;
+  skos:definition "\"A mouth action that is part of a larger facial expression\""@en ;
+.
+sldc:Wrist
+  rdf:type sldc:Location_DGS_Vertical ;
+  rdfs:label "\"wrist\""@en ;
+.
+sldc:WristBack
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"wrist back\""@en ;
+.
+sldc:WristFront
+  rdf:type sldc:MinorLocation ;
+  rdfs:label "\"wrist front\""@en ;
+.
+sldc:Wrist_Binary
+  rdf:type owl:Class ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"wrist (yes/no)\""@en ;
+  rdfs:subClassOf sldc:Phonology_ToBeClassified ;
+.
+sldc:X-Shaped
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"x-shaped\""@en ;
+.
+sldc:Y
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"y\"" ;
+.
+sldc:Z-Shaped
+  rdf:type sldc:PathMovement_Shape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"z-shaped\""@en ;
+.
+sldc:hamfinger2
+  rdf:type ontolex:Form ;
+  rdfs:label "\"finger 2\""@en ;
+  ontolex:writtenRep "\"E002\""@UNI-PUA ;
+.
+sldc:hamfinger23
+  rdf:type ontolex:Form ;
+  rdfs:label "\"finger 2 and 3\""@en ;
+  ontolex:writtenRep "\"E003\""@UNI-PUA ;
+.
+sldc:hamfinger2345
+  rdf:type ontolex:Form ;
+  rdfs:label "\"finger 2, 3, 4 and 5\""@en ;
+  ontolex:writtenRep "\"E005\""@UNI-PUA ;
+.
+sldc:hamfinger23spread
+  rdf:type ontolex:Form ;
+  rdfs:label "\"finger 2 and 3, spread\""@en ;
+  ontolex:writtenRep "\"E004\""@UNI-PUA ;
+.
+sldc:hamfist
+  rdf:type ontolex:Form ;
+  rdfs:label "\"fist\""@en ;
+  ontolex:writtenRep "\"E000\""@UNI-PUA ;
+.
+sldc:hamflathand
+  rdf:type ontolex:Form ;
+  rdfs:label "\"flat hand\""@en ;
+  ontolex:writtenRep "\"E001\""@UNI-PUA ;
+.
+sldc:hampinch12
+  rdf:type ontolex:Form ;
+  rdfs:label "\"pinch 1 and 2\""@en ;
+  ontolex:writtenRep "\"E006\""@UNI-PUA ;
+.
+sldc:hampinch12open
+  rdf:type ontolex:Form ;
+  rdfs:label "\"pinch 1 and 2, open\""@en ;
+  ontolex:writtenRep "\"E008\""@UNI-PUA ;
+.
+sldc:hampinchall
+  rdf:type ontolex:Form ;
+  rdfs:label "\"pinch all\""@en ;
+  ontolex:writtenRep "\"E007\""@UNI-PUA ;
+.
+sldc:hasCompound
+  rdf:type owl:DatatypeProperty ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"has compound\""@en ;
+  rdfs:range xsd:boolean ;
+.
+sldc:hasFingerSpelledLoanSign
+  rdf:type owl:DatatypeProperty ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"has fingerspelled loan sign\""@en ;
+  rdfs:range xsd:boolean ;
+.
+sldc:hasInitializedSign
+  rdf:type owl:DatatypeProperty ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"has initialized sign\""@en ;
+  rdfs:range xsd:boolean ;
+.
+sldc:hasNumberOfMorphemes
+  rdf:type owl:DatatypeProperty ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"has numberOfMorphemes\""@en ;
+  rdfs:range xsd:integer ;
+.
+sldc:hasPathMovement
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "\"has path movement\""@en ;
+  rdfs:range sldc:PathMovement ;
+.
+sldc:hasRepeatedMovement
+  rdf:type owl:DatatypeProperty ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"has repeated movement\""@en ;
+  rdfs:range xsd:boolean ;
+.
+sldc:hasThumbPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "\"has tumb position\""@en ;
+  rdfs:range sldc:PathMovement ;
+  rdfs:range sldc:ThumbPosition ;
+.
+<http://example.org/sign_language_data_cat_1>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"1\"" ;
+.
+<http://example.org/sign_language_data_cat_3>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"3\"" ;
+.
+<http://example.org/sign_language_data_cat_4>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"4\"" ;
+.
+<http://example.org/sign_language_data_cat_5>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"5\"" ;
+.
+<http://example.org/sign_language_data_cat_7>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"7\"" ;
+.
+<http://example.org/sign_language_data_cat_8>
+  rdf:type sldc:HandShape ;
+  dc:source "https://asl-lex.org/" ;
+  rdfs:label "\"8\"" ;
+.
+lexinfo:adjective
+  rdf:type sldc:Major ;
+.
+lexinfo:adverb
+  rdf:type sldc:Major ;
+.
+lexinfo:conjunction
+  rdf:type sldc:Minor ;
+.
+lexinfo:determiner
+  rdf:type sldc:Minor ;
+.
+lexinfo:noun
+  rdf:type sldc:Major ;
+.
+lexinfo:numeral
+  rdf:type sldc:Major ;
+.
+lexinfo:preposition
+  rdf:type sldc:Minor ;
+.
+lexinfo:properNoun
+  rdf:type sldc:Major ;
+.
+lexinfo:verb
+  rdf:type sldc:Major ;
+.
+rdfs:comment
+  rdfs:subPropertyOf rdfs:seeAlso ;
+.
+ontolex:Busch
+  rdf:type ontolex:Word ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  rdfs:label "\"Busch\""@de ;
+.
+ontolex:Busch_Sg
+  rdf:type ontolex:Form ;
+  lexinfo:gender lexinfo:masculine ;
+  lexinfo:number lexinfo:singular ;
+  rdfs:label "\"Busch\""@de ;
+  ontolex:phoneticRep "\"bʊʃ\""@IPA ;
+  ontolex:writtenRep "\"Busch\""@de ;
+  ontolex:writtenRep "\"hamsymmlr hamfinger2345 hamfingerbendmod hamthumboutmod hamextfingeruo hampalmd hamclose hamshoulders hambetween hamchest hamcircleo hamrepeatfromstart\""@de-DE-sigml ;
+.
